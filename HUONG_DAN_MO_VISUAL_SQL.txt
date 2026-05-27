@@ -1,0 +1,40 @@
+HƯỚNG DẪN MỞ BÀI NHÓM 13 - QUẢN LÝ TƯ VẤN THUỐC
+
+PHẦN 1: CHẠY DATABASE SQL SERVER
+1. Mở Visual Studio.
+2. Vào View -> SQL Server Object Explorer.
+3. Kết nối vào: (localdb)\MSSQLLocalDB.
+4. Bấm New Query.
+5. Mở file:
+   Database/Tao_CSDL_QuanLyTuVanThuocDB.sql
+6. Copy toàn bộ nội dung file SQL vào New Query.
+7. Bấm Execute.
+8. Refresh Databases.
+9. Kiểm tra có database:
+   QuanLyTuVanThuocDB
+10. Mở Tables sẽ thấy các bảng:
+   VaiTro, NguoiDung, BenhNhan, LoaiThuoc, Thuoc, DonTuVan,
+   ChiTietDonTuVan, CanhBao, PhieuNhapKho, ChiTietPhieuNhap.
+
+PHẦN 2: MỞ WEBSITE TRONG VISUAL STUDIO
+1. Mở file:
+   QuanLyTuVanThuoc_Nhom13.sln
+2. Chờ Visual Studio restore NuGet packages.
+3. Mở file appsettings.json kiểm tra connection string:
+   Server=(localdb)\MSSQLLocalDB;Database=QuanLyTuVanThuocDB;Trusted_Connection=True
+4. Bấm Ctrl + F5 hoặc nút tam giác xanh để chạy.
+5. Website sẽ hiện giao diện giống Figma:
+   - Dashboard tổng quan
+   - Quản lý bệnh nhân
+   - Quản lý kho dược phẩm
+   - Lập phiếu tư vấn thuốc
+   - Cảnh báo hệ thống
+   - Báo cáo thống kê
+
+PHẦN 3: CÁCH TRÌNH BÀY KHI THẦY CHẤM
+1. Mở Jira cho thầy xem phân công.
+2. Mở GitHub cho thầy xem repo, collaborator, fork.
+3. Mở SQL Server cho thầy xem database và bảng.
+4. Chạy web trên Visual Studio.
+5. Mở Figma cho thầy xem thiết kế giao diện.
+6. Mở chức năng Lập phiếu tư vấn thuốc để demo.

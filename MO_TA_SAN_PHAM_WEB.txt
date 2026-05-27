@@ -1,0 +1,26 @@
+MÔ TẢ SẢN PHẨM WEB - HỆ THỐNG QUẢN LÝ TƯ VẤN THUỐC
+
+Đề tài: Hệ thống Quản lý Tư vấn Thuốc
+Nhóm: 13
+Đơn vị mô phỏng: HUTECH CLINIC
+
+1. Mục tiêu hệ thống
+Hệ thống được xây dựng nhằm hỗ trợ phòng khám quản lý quá trình tư vấn thuốc cho bệnh nhân. Hệ thống giúp lưu trữ hồ sơ bệnh nhân, quản lý danh mục thuốc, lập phiếu tư vấn thuốc, theo dõi tồn kho, hạn sử dụng và cảnh báo dị ứng thuốc.
+
+2. Các chức năng đã xây dựng
+- Dashboard tổng quan.
+- Quản lý bệnh nhân: thêm, sửa, xóa, xem chi tiết, tìm kiếm.
+- Quản lý thuốc: thêm, sửa, xóa, xem chi tiết, lọc theo loại thuốc.
+- Lập phiếu tư vấn thuốc cho bệnh nhân.
+- Lưu chi tiết thuốc trong phiếu tư vấn.
+- Tự động cập nhật tồn kho sau khi lập phiếu.
+- Cảnh báo dị ứng thuốc.
+- Cảnh báo tồn kho thấp và thuốc sắp hết hạn.
+- Báo cáo thống kê và in báo cáo.
+
+3. Cơ sở dữ liệu
+Cơ sở dữ liệu sử dụng SQL Server với các bảng chính:
+VaiTro, NguoiDung, BenhNhan, LoaiThuoc, Thuoc, DonTuVan, ChiTietDonTuVan, CanhBao, PhieuNhapKho, ChiTietPhieuNhap.
+
+4. Giao diện
+Giao diện website được thiết kế theo bản Figma, tông màu xanh y tế, có sidebar điều hướng và các màn hình chính như dashboard, bệnh nhân, kho thuốc, phiếu tư vấn, cảnh báo và báo cáo.

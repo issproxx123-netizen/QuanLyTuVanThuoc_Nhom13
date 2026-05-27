@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="7600" height="1200" viewBox="0 0 7600 1200">
+  <defs>
+    <style>
+      .bg { fill:#f4f7fb; }
+      .frame { fill:#ffffff; stroke:#d7deea; stroke-width:2; rx:24; }
+      .sidebar { fill:#0f766e; }
+      .navtext { fill:#dff7f3; font-family:Arial, sans-serif; font-size:22px; }
+      .navtitle { fill:#ffffff; font-family:Arial, sans-serif; font-weight:700; font-size:30px; }
+      .title { fill:#0f172a; font-family:Arial, sans-serif; font-weight:700; font-size:34px; }
+      .subtitle { fill:#64748b; font-family:Arial, sans-serif; font-size:20px; }
+      .label { fill:#334155; font-family:Arial, sans-serif; font-weight:700; font-size:20px; }
+      .text { fill:#334155; font-family:Arial, sans-serif; font-size:18px; }
+      .small { fill:#64748b; font-family:Arial, sans-serif; font-size:15px; }
+      .card { fill:#ffffff; stroke:#e2e8f0; stroke-width:2; rx:18; }
+      .primary { fill:#0f766e; rx:12; }
+      .secondary { fill:#e0f2f1; rx:12; }
+      .danger { fill:#fee2e2; rx:12; }
+      .warn { fill:#fef3c7; rx:12; }
+      .success { fill:#dcfce7; rx:12; }
+      .blue { fill:#dbeafe; rx:12; }
+      .btntext { fill:white; font-family:Arial, sans-serif; font-weight:700; font-size:18px; }
+      .btntext2 { fill:#0f766e; font-family:Arial, sans-serif; font-weight:700; font-size:18px; }
+      .line { stroke:#e2e8f0; stroke-width:2; }
+      .avatar { fill:#14b8a6; }
+      .input { fill:#ffffff; stroke:#cbd5e1; stroke-width:2; rx:10; }
+      .tablehead { fill:#f1f5f9; }
+    </style>
+  </defs>
+  <rect width="7600" height="1200" class="bg"/>
+
+  <!-- ===== Frame component function copied manually ===== -->
+
+  <!-- SCREEN 1 DASHBOARD -->
+  <g transform="translate(60,60)">
+    <rect width="1400" height="1000" class="frame"/>
+    <rect width="260" height="1000" class="sidebar"/>
+    <text x="32" y="70" class="navtitle">HUTECH CLINIC</text>
+    <text x="32" y="110" class="navtext">Quản lý tư vấn thuốc</text>
+    <text x="32" y="180" class="navtext">🏠 Tổng quan</text>
+    <text x="32" y="230" class="navtext">👤 Bệnh nhân</text>
+    <text x="32" y="280" class="navtext">💊 Kho thuốc</text>
+    <text x="32" y="330" class="navtext">📝 Phiếu tư vấn</text>
+    <text x="32" y="380" class="navtext">⚠️ Cảnh báo</text>
+    <text x="32" y="430" class="navtext">📊 Báo cáo</text>
+    <text x="32" y="940" class="navtext">Admin</text>
+
+    <text x="300" y="70" class="title">Dashboard tổng quan</text>
+    <text x="300" y="105" class="subtitle">Theo dõi nhanh hoạt động tư vấn thuốc trong ngày</text>
+    <circle cx="1305" cy="72" r="28" class="avatar"/>
+    <text x="1288" y="80" fill="white" font-family="Arial" font-size="20" font-weight="700">TA</text>
+
+    <rect x="300" y="150" width="240" height="130" class="card"/>
+    <text x="325" y="190" class="small">Tổng bệnh nhân</text>
+    <text x="325" y="245" class="title">128</text>
+    <rect x="565" y="150" width="240" height="130" class="card"/>
+    <text x="590" y="190" class="small">Thuốc trong kho</text>
+    <text x="590" y="245" class="title">56</text>
+    <rect x="830" y="150" width="240" height="130" class="card"/>
+    <text x="855" y="190" class="small">Phiếu hôm nay</text>
+    <text x="855" y="245" class="title">18</text>
+    <rect x="1095" y="150" width="240" height="130" class="card"/>
+    <text x="1120" y="190" class="small">Cảnh báo</text>
+    <text x="1120" y="245" class="title">7</text>
+
+    <rect x="300" y="320" width="640" height="310" class="card"/>
+    <text x="325" y="365" class="label">Phiếu tư vấn gần đây</text>
+    <rect x="325" y="395" width="590" height="48" class="tablehead"/>
+    <text x="345" y="426" class="small">Bệnh nhân</text><text x="575" y="426" class="small">Triệu chứng</text><text x="790" y="426" class="small">Trạng thái</text>
+    <line x1="325" y1="455" x2="915" y2="455" class="line"/>
+    <text x="345" y="490" class="text">Nguyễn Văn A</text><text x="575" y="490" class="text">Sốt, đau đầu</text><rect x="790" y="465" width="90" height="32" class="success"/><text x="805" y="487" class="small">Đã lưu</text>
+    <line x1="325" y1="510" x2="915" y2="510" class="line"/>
+    <text x="345" y="545" class="text">Trần Thị B</text><text x="575" y="545" class="text">Dị ứng</text><rect x="790" y="520" width="110" height="32" class="warn"/><text x="805" y="542" class="small">Cần kiểm tra</text>
+    <line x1="325" y1="565" x2="915" y2="565" class="line"/>
+    <text x="345" y="600" class="text">Lê Minh C</text><text x="575" y="600" class="text">Đau dạ dày</text><rect x="790" y="575" width="90" height="32" class="success"/><text x="805" y="597" class="small">Đã lưu</text>
+
+    <rect x="970" y="320" width="365" height="310" class="card"/>
+    <text x="995" y="365" class="label">Cảnh báo hệ thống</text>
+    <rect x="995" y="395" width="310" height="62" class="danger"/>
+    <text x="1015" y="425" class="text">Dị ứng penicillin</text>
+    <text x="1015" y="448" class="small">Bệnh nhân Nguyễn Văn A</text>
+    <rect x="995" y="475" width="310" height="62" class="warn"/>
+    <text x="1015" y="505" class="text">Omeprazole tồn kho thấp</text>
+    <text x="1015" y="528" class="small">Còn 45 viên</text>
+    <rect x="995" y="555" width="310" height="62" class="blue"/>
+    <text x="1015" y="585" class="text">Thuốc sắp hết hạn</text>
+    <text x="1015" y="608" class="small">Kiểm tra kho dược</text>
+
+    <rect x="300" y="670" width="1035" height="230" class="card"/>
+    <text x="325" y="715" class="label">Thống kê nhanh</text>
+    <rect x="345" y="765" width="120" height="95" fill="#0f766e" rx="8"/>
+    <rect x="495" y="735" width="120" height="125" fill="#14b8a6" rx="8"/>
+    <rect x="645" y="785" width="120" height="75" fill="#2dd4bf" rx="8"/>
+    <rect x="795" y="715" width="120" height="145" fill="#99f6e4" rx="8"/>
+    <rect x="945" y="755" width="120" height="105" fill="#5eead4" rx="8"/>
+    <text x="360" y="890" class="small">T2</text><text x="510" y="890" class="small">T3</text><text x="660" y="890" class="small">T4</text><text x="810" y="890" class="small">T5</text><text x="960" y="890" class="small">T6</text>
+  </g>
+
+  <!-- SCREEN 2 PATIENTS -->
+  <g transform="translate(1540,60)">
+    <rect width="1400" height="1000" class="frame"/>
+    <rect width="260" height="1000" class="sidebar"/>
+    <text x="32" y="70" class="navtitle">HUTECH CLINIC</text>
+    <text x="32" y="110" class="navtext">Quản lý tư vấn thuốc</text>
+    <text x="32" y="180" class="navtext">🏠 Tổng quan</text>
+    <text x="32" y="230" class="navtext">👤 Bệnh nhân</text>
+    <text x="32" y="280" class="navtext">💊 Kho thuốc</text>
+    <text x="32" y="330" class="navtext">📝 Phiếu tư vấn</text>
+    <text x="32" y="380" class="navtext">⚠️ Cảnh báo</text>
+
+    <text x="300" y="70" class="title">Quản lý bệnh nhân</text>
+    <text x="300" y="105" class="subtitle">Tiếp nhận, tìm kiếm và cập nhật hồ sơ bệnh nhân</text>
+    <rect x="1135" y="55" width="200" height="48" class="primary"/>
+    <text x="1165" y="87" class="btntext">+ Thêm bệnh nhân</text>
+
+    <rect x="300" y="145" width="1035" height="72" class="card"/>
+    <rect x="325" y="162" width="370" height="38" class="input"/>
+    <text x="345" y="187" class="small">Tìm theo tên, số điện thoại...</text>
+    <rect x="720" y="162" width="160" height="38" class="input"/>
+    <text x="740" y="187" class="small">Giới tính</text>
+    <rect x="900" y="162" width="150" height="38" class="secondary"/>
+    <text x="933" y="187" class="btntext2">Lọc</text>
+
+    <rect x="300" y="250" width="1035" height="640" class="card"/>
+    <rect x="300" y="250" width="1035" height="56" class="tablehead"/>
+    <text x="325" y="285" class="label">Mã</text><text x="410" y="285" class="label">Họ tên</text><text x="650" y="285" class="label">SĐT</text><text x="830" y="285" class="label">Dị ứng</text><text x="1090" y="285" class="label">Thao tác</text>
+    <line x1="300" y1="306" x2="1335" y2="306" class="line"/>
+    <text x="325" y="350" class="text">BN001</text><text x="410" y="350" class="text">Nguyễn Văn A</text><text x="650" y="350" class="text">0912345678</text><text x="830" y="350" class="text">Penicillin</text><rect x="1090" y="324" width="85" height="34" class="blue"/><text x="1113" y="347" class="small">Xem</text><rect x="1188" y="324" width="80" height="34" class="warn"/><text x="1212" y="347" class="small">Sửa</text>
+    <line x1="300" y1="375" x2="1335" y2="375" class="line"/>
+    <text x="325" y="420" class="text">BN002</text><text x="410" y="420" class="text">Trần Thị B</text><text x="650" y="420" class="text">0987654321</text><text x="830" y="420" class="text">Không có</text><rect x="1090" y="394" width="85" height="34" class="blue"/><text x="1113" y="417" class="small">Xem</text><rect x="1188" y="394" width="80" height="34" class="warn"/><text x="1212" y="417" class="small">Sửa</text>
+    <line x1="300" y1="445" x2="1335" y2="445" class="line"/>
+    <text x="325" y="490" class="text">BN003</text><text x="410" y="490" class="text">Lê Minh C</text><text x="650" y="490" class="text">0901122334</text><text x="830" y="490" class="text">Hải sản</text><rect x="1090" y="464" width="85" height="34" class="blue"/><text x="1113" y="487" class="small">Xem</text><rect x="1188" y="464" width="80" height="34" class="warn"/><text x="1212" y="487" class="small">Sửa</text>
+  </g>
+
+  <!-- SCREEN 3 MEDICINE -->
+  <g transform="translate(3020,60)">
+    <rect width="1400" height="1000" class="frame"/>
+    <rect width="260" height="1000" class="sidebar"/>
+    <text x="32" y="70" class="navtitle">HUTECH CLINIC</text>
+    <text x="32" y="110" class="navtext">Quản lý tư vấn thuốc</text>
+    <text x="32" y="180" class="navtext">🏠 Tổng quan</text>
+    <text x="32" y="230" class="navtext">👤 Bệnh nhân</text>
+    <text x="32" y="280" class="navtext">💊 Kho thuốc</text>
+    <text x="32" y="330" class="navtext">📝 Phiếu tư vấn</text>
+    <text x="32" y="380" class="navtext">⚠️ Cảnh báo</text>
+
+    <text x="300" y="70" class="title">Quản lý kho dược phẩm</text>
+    <text x="300" y="105" class="subtitle">Theo dõi danh mục thuốc, tồn kho và hạn sử dụng</text>
+    <rect x="1125" y="55" width="210" height="48" class="primary"/>
+    <text x="1160" y="87" class="btntext">+ Thêm thuốc</text>
+
+    <rect x="300" y="150" width="240" height="110" class="card"/>
+    <text x="325" y="190" class="small">Tổng thuốc</text><text x="325" y="235" class="title">56</text>
+    <rect x="565" y="150" width="240" height="110" class="card"/>
+    <text x="590" y="190" class="small">Tồn kho thấp</text><text x="590" y="235" class="title">5</text>
+    <rect x="830" y="150" width="240" height="110" class="card"/>
+    <text x="855" y="190" class="small">Sắp hết hạn</text><text x="855" y="235" class="title">2</text>
+
+    <rect x="300" y="300" width="1035" height="590" class="card"/>
+    <rect x="300" y="300" width="1035" height="56" class="tablehead"/>
+    <text x="325" y="335" class="label">Tên thuốc</text><text x="560" y="335" class="label">Loại</text><text x="760" y="335" class="label">Hàm lượng</text><text x="970" y="335" class="label">Tồn</text><text x="1110" y="335" class="label">Hạn dùng</text>
+    <line x1="300" y1="356" x2="1335" y2="356" class="line"/>
+    <text x="325" y="400" class="text">Paracetamol</text><text x="560" y="400" class="text">Hạ sốt</text><text x="760" y="400" class="text">500mg</text><text x="970" y="400" class="text">100</text><text x="1110" y="400" class="text">31/12/2027</text>
+    <line x1="300" y1="425" x2="1335" y2="425" class="line"/>
+    <text x="325" y="470" class="text">Amoxicillin</text><text x="560" y="470" class="text">Kháng sinh</text><text x="760" y="470" class="text">500mg</text><text x="970" y="470" class="text">80</text><text x="1110" y="470" class="text">30/06/2027</text>
+    <line x1="300" y1="495" x2="1335" y2="495" class="line"/>
+    <text x="325" y="540" class="text">Omeprazole</text><text x="560" y="540" class="text">Tiêu hóa</text><text x="760" y="540" class="text">20mg</text><rect x="960" y="514" width="70" height="34" class="warn"/><text x="982" y="537" class="small">45</text><text x="1110" y="540" class="text">20/05/2027</text>
+  </g>
+
+  <!-- SCREEN 4 CONSULTATION -->
+  <g transform="translate(4500,60)">
+    <rect width="1400" height="1000" class="frame"/>
+    <rect width="260" height="1000" class="sidebar"/>
+    <text x="32" y="70" class="navtitle">HUTECH CLINIC</text>
+    <text x="32" y="110" class="navtext">Quản lý tư vấn thuốc</text>
+    <text x="32" y="180" class="navtext">🏠 Tổng quan</text>
+    <text x="32" y="230" class="navtext">👤 Bệnh nhân</text>
+    <text x="32" y="280" class="navtext">💊 Kho thuốc</text>
+    <text x="32" y="330" class="navtext">📝 Phiếu tư vấn</text>
+    <text x="32" y="380" class="navtext">⚠️ Cảnh báo</text>
+
+    <text x="300" y="70" class="title">Lập phiếu tư vấn thuốc</text>
+    <text x="300" y="105" class="subtitle">Chọn bệnh nhân, nhập triệu chứng và kê thuốc phù hợp</text>
+
+    <rect x="300" y="145" width="480" height="745" class="card"/>
+    <text x="330" y="190" class="label">Thông tin bệnh nhân</text>
+    <text x="330" y="240" class="small">Bệnh nhân</text><rect x="330" y="255" width="390" height="44" class="input"/><text x="350" y="283" class="text">Nguyễn Văn A</text>
+    <text x="330" y="335" class="small">Triệu chứng</text><rect x="330" y="350" width="390" height="95" class="input"/><text x="350" y="382" class="text">Sốt, đau đầu, mệt mỏi</text>
+    <text x="330" y="485" class="small">Chẩn đoán</text><rect x="330" y="500" width="390" height="80" class="input"/><text x="350" y="532" class="text">Cảm sốt thông thường</text>
+    <rect x="330" y="620" width="390" height="88" class="danger"/>
+    <text x="350" y="655" class="label">⚠️ Cảnh báo dị ứng</text>
+    <text x="350" y="685" class="small">Bệnh nhân dị ứng penicillin</text>
+    <rect x="330" y="750" width="180" height="48" class="primary"/><text x="365" y="782" class="btntext">Lưu phiếu</text>
+    <rect x="530" y="750" width="190" height="48" class="secondary"/><text x="570" y="782" class="btntext2">In phiếu</text>
+
+    <rect x="810" y="145" width="525" height="745" class="card"/>
+    <text x="840" y="190" class="label">Danh sách thuốc tư vấn</text>
+    <rect x="840" y="230" width="430" height="44" class="input"/><text x="860" y="258" class="small">Tìm thuốc...</text>
+    <rect x="840" y="310" width="430" height="92" class="success"/>
+    <text x="860" y="345" class="label">Paracetamol 500mg</text>
+    <text x="860" y="375" class="small">Số lượng: 6 viên • Uống sau ăn</text>
+    <rect x="840" y="425" width="430" height="92" class="success"/>
+    <text x="860" y="460" class="label">Vitamin C 500mg</text>
+    <text x="860" y="490" class="small">Số lượng: 3 viên • Uống sáng</text>
+    <rect x="840" y="540" width="430" height="92" class="danger"/>
+    <text x="860" y="575" class="label">Amoxicillin 500mg</text>
+    <text x="860" y="605" class="small">Không phù hợp do dị ứng penicillin</text>
+  </g>
+
+  <!-- SCREEN 5 REPORT -->
+  <g transform="translate(5980,60)">
+    <rect width="1400" height="1000" class="frame"/>
+    <rect width="260" height="1000" class="sidebar"/>
+    <text x="32" y="70" class="navtitle">HUTECH CLINIC</text>
+    <text x="32" y="110" class="navtext">Quản lý tư vấn thuốc</text>
+    <text x="32" y="180" class="navtext">🏠 Tổng quan</text>
+    <text x="32" y="230" class="navtext">👤 Bệnh nhân</text>
+    <text x="32" y="280" class="navtext">💊 Kho thuốc</text>
+    <text x="32" y="330" class="navtext">📝 Phiếu tư vấn</text>
+    <text x="32" y="380" class="navtext">📊 Báo cáo</text>
+
+    <text x="300" y="70" class="title">Báo cáo và thống kê</text>
+    <text x="300" y="105" class="subtitle">Thống kê lượt tư vấn, thuốc sắp hết hạn và nhập xuất kho</text>
+    <rect x="1135" y="55" width="200" height="48" class="primary"/>
+    <text x="1180" y="87" class="btntext">Xuất báo cáo</text>
+
+    <rect x="300" y="150" width="1035" height="330" class="card"/>
+    <text x="330" y="195" class="label">Lượt tư vấn theo ngày</text>
+    <line x1="350" y1="420" x2="1250" y2="420" class="line"/>
+    <rect x="390" y="320" width="75" height="100" fill="#0f766e" rx="8"/>
+    <rect x="525" y="280" width="75" height="140" fill="#14b8a6" rx="8"/>
+    <rect x="660" y="340" width="75" height="80" fill="#2dd4bf" rx="8"/>
+    <rect x="795" y="240" width="75" height="180" fill="#5eead4" rx="8"/>
+    <rect x="930" y="300" width="75" height="120" fill="#99f6e4" rx="8"/>
+    <rect x="1065" y="260" width="75" height="160" fill="#14b8a6" rx="8"/>
+    <text x="405" y="455" class="small">T2</text><text x="540" y="455" class="small">T3</text><text x="675" y="455" class="small">T4</text><text x="810" y="455" class="small">T5</text><text x="945" y="455" class="small">T6</text><text x="1080" y="455" class="small">T7</text>
+
+    <rect x="300" y="520" width="500" height="370" class="card"/>
+    <text x="330" y="565" class="label">Thuốc cần chú ý</text>
+    <rect x="330" y="600" width="420" height="58" class="warn"/><text x="350" y="636" class="text">Omeprazole - tồn kho thấp</text>
+    <rect x="330" y="675" width="420" height="58" class="danger"/><text x="350" y="711" class="text">Thuốc sắp hết hạn</text>
+    <rect x="330" y="750" width="420" height="58" class="blue"/><text x="350" y="786" class="text">Amoxicillin - cảnh báo dị ứng</text>
+
+    <rect x="835" y="520" width="500" height="370" class="card"/>
+    <text x="865" y="565" class="label">Tóm tắt hệ thống</text>
+    <text x="865" y="620" class="text">Bệnh nhân: 128 hồ sơ</text>
+    <text x="865" y="665" class="text">Thuốc: 56 loại thuốc</text>
+    <text x="865" y="710" class="text">Phiếu tư vấn: 245 phiếu</text>
+    <text x="865" y="755" class="text">Cảnh báo đang xử lý: 7</text>
+    <text x="865" y="800" class="text">Người dùng hệ thống: 6</text>
+  </g>
+</svg>
