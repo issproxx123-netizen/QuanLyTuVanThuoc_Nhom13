@@ -1,0 +1,29 @@
+@model DashboardViewModel
+@{ ViewData["Title"] = "Dashboard"; }
+<section class="page-header"><div><p class="eyebrow">TRUNG TÂM ĐIỀU HÀNH</p><h2>Dashboard tổng quan</h2><p>Theo dõi dữ liệu tư vấn thuốc theo thời gian thực</p></div>@if (User.IsInRole("Admin") || User.IsInRole("Bác sĩ / Nhân viên tư vấn")) { <a asp-controller="DonTuVan" asp-action="Create" class="btn primary">＋ Lập phiếu tư vấn</a> }</section>
+<section class="stat-grid">
+<div class="stat-card"><div class="stat-icon teal">👥</div><span>Bệnh nhân</span><strong>@Model.TongBenhNhan</strong><small>Hồ sơ đang quản lý</small></div>
+<div class="stat-card"><div class="stat-icon blue">💊</div><span>Thuốc hoạt động</span><strong>@Model.TongThuoc</strong><small>@Model.ThuocTonKhoThap thuốc tồn thấp</small></div>
+<div class="stat-card"><div class="stat-icon violet">📋</div><span>Phiếu tư vấn</span><strong>@Model.TongDonTuVan</strong><small>@Model.TongPhieuNhap phiếu nhập kho</small></div>
+<div class="stat-card danger"><div class="stat-icon red">⚠</div><span>Cảnh báo</span><strong>@Model.TongCanhBao</strong><small>@Model.ThuocSapHetHan thuốc sắp hết hạn</small></div>
+</section>
+<section class="content-grid">
+<div class="card wide"><div class="card-title"><div><h3>Phiếu tư vấn gần đây</h3><p class="muted">Dữ liệu mới nhất trong hệ thống</p></div><a asp-controller="DonTuVan" asp-action="Index">Xem tất cả →</a></div>
+<div class="table-wrap"><table class="table"><thead><tr><th>Mã</th><th>Bệnh nhân</th><th>Triệu chứng</th><th>Người tư vấn</th><th>Ngày</th><th></th></tr></thead><tbody>
+@foreach (var x in Model.DonGanDay) { <tr><td><span class="code-pill">TV@x.MaDonTuVan.ToString("000")</span></td><td><strong>@x.BenhNhan?.HoTen</strong></td><td>@x.TrieuChung</td><td>@x.NguoiDung?.HoTen</td><td>@x.NgayTuVan.ToString("dd/MM HH:mm")</td><td><a class="link" asp-controller="DonTuVan" asp-action="Details" asp-route-id="@x.MaDonTuVan">Chi tiết</a></td></tr> }
+@if (!Model.DonGanDay.Any()) { <tr><td colspan="6" class="empty-cell">Chưa có phiếu tư vấn.</td></tr> }
+</tbody></table></div></div>
+<div class="card"><div class="card-title"><h3>Cảnh báo mới</h3><a asp-controller="CanhBao" asp-action="Index">Xem →</a></div><div class="alert-list">
+@foreach (var x in Model.CanhBaoMoi) { <div class="alert-item @(x.MucDo == "Cao" ? "high" : "medium")"><strong>@x.LoaiCanhBao</strong><span>@x.NoiDung</span><small>@x.NgayTao.ToString("dd/MM HH:mm")</small></div> }
+@if (!Model.CanhBaoMoi.Any()) { <div class="empty-mini">Không có cảnh báo mới.</div> }
+</div></div>
+</section>
+<section class="content-grid">
+<div class="card wide"><div class="card-title"><div><h3>Lượt tư vấn 7 ngày gần nhất</h3><p class="muted">Số liệu lấy trực tiếp từ cơ sở dữ liệu</p></div><span class="value-chip">Tổng @Model.LuotTuVanTheoNgay.Sum(x => x.Value)</span></div><div class="bar-chart dynamic">
+@foreach (var x in Model.LuotTuVanTheoNgay) { <div class="bar-column"><span class="bar-value">@x.Value</span><div class="bar" style="height:@x.HeightPercent%"></div><small>@x.Label</small></div> }
+</div></div>
+<div class="card"><div class="card-title"><h3>Thuốc cần chú ý</h3><a asp-controller="Thuoc" asp-action="CanhBao">Kiểm tra →</a></div><div class="medicine-warning">
+@foreach (var x in Model.ThuocCanChuY) { <div><strong>@x.TenThuoc @x.HamLuong</strong><span>Tồn @x.SoLuongTon @x.DonViTinh · HSD @x.HanSuDung?.ToString("dd/MM/yyyy")</span></div> }
+@if (!Model.ThuocCanChuY.Any()) { <div class="empty-mini">Kho thuốc đang ổn định.</div> }
+</div><div class="inventory-value"><span>Giá trị tồn kho ước tính</span><strong>@Model.GiaTriTonKho.ToString("N0") ₫</strong></div></div>
+</section>

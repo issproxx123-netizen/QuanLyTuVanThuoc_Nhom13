@@ -1,0 +1,13 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Lỗi hệ thống";
+}
+<section class="page-header">
+    <div>
+        <h2>Lỗi hệ thống</h2>
+        <p>Có lỗi xảy ra khi xử lý yêu cầu.</p>
+    </div>
+</section>
+<div class="card">
+    <p>Mã yêu cầu: @Model.RequestId</p>
+</div>

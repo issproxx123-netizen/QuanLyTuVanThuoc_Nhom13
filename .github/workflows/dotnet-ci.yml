@@ -1,0 +1,29 @@
+name: .NET CI
+
+on:
+  push:
+    branches: [ main, develop, "feature/**", "release/**" ]
+  pull_request:
+    branches: [ main, develop ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore dependencies
+        run: dotnet restore QuanLyTuVanThuoc_Nhom13.sln
+
+      - name: Build Release
+        run: dotnet build QuanLyTuVanThuoc_Nhom13.sln --configuration Release --no-restore

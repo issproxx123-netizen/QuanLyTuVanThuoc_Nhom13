@@ -1,0 +1,44 @@
+@model BenhNhan
+@{
+    ViewData["Title"] = "Chi tiết bệnh nhân";
+}
+<section class="page-header">
+    <div>
+        <h2>Hồ sơ bệnh nhân</h2>
+        <p>@Model.HoTen</p>
+    </div>
+    <a asp-action="Index" class="btn ghost">Quay lại</a>
+</section>
+
+<div class="content-grid">
+    <div class="card">
+        <h3>Thông tin cá nhân</h3>
+        <div class="detail-list">
+            <div><span>Mã bệnh nhân</span><strong>BN@Model.MaBenhNhan.ToString("000")</strong></div>
+            <div><span>Họ tên</span><strong>@Model.HoTen</strong></div>
+            <div><span>Giới tính</span><strong>@Model.GioiTinh</strong></div>
+            <div><span>Ngày sinh</span><strong>@Model.NgaySinh?.ToString("dd/MM/yyyy")</strong></div>
+            <div><span>SĐT</span><strong>@Model.SoDienThoai</strong></div>
+            <div><span>Địa chỉ</span><strong>@Model.DiaChi</strong></div>
+            <div><span>Tiền sử bệnh</span><strong>@Model.TienSuBenh</strong></div>
+            <div><span>Dị ứng</span><strong>@Model.DiUng</strong></div>
+        </div>
+    </div>
+    <div class="card wide">
+        <h3>Lịch sử tư vấn</h3>
+        <table class="table">
+            <thead><tr><th>Ngày</th><th>Triệu chứng</th><th>Chẩn đoán</th><th>Thuốc</th></tr></thead>
+            <tbody>
+                @foreach (var don in Model.DonTuVans.OrderByDescending(x => x.NgayTuVan))
+                {
+                    <tr>
+                        <td>@don.NgayTuVan.ToString("dd/MM/yyyy")</td>
+                        <td>@don.TrieuChung</td>
+                        <td>@don.ChanDoan</td>
+                        <td>@string.Join(", ", don.ChiTietDonTuVans.Select(x => x.Thuoc?.TenThuoc))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

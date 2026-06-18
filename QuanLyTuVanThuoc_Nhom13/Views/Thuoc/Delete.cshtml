@@ -1,0 +1,4 @@
+@model Thuoc
+@{ ViewData["Title"] = "Ngừng sử dụng thuốc"; }
+<section class="page-header"><div><h2>Ngừng sử dụng thuốc</h2><p>Dữ liệu lịch sử sẽ được giữ nguyên để đảm bảo truy vết</p></div></section>
+<div class="card warning-card"><h3>@Model.TenThuoc @Model.HamLuong</h3><p>Loại: @Model.LoaiThuoc?.TenLoaiThuoc · Tồn kho: @Model.SoLuongTon @Model.DonViTinh</p><form asp-action="Delete" method="post"><input asp-for="MaThuoc" type="hidden" /><button class="btn danger-btn">Xác nhận ngừng sử dụng</button><a asp-action="Index" class="btn ghost">Hủy</a></form></div>

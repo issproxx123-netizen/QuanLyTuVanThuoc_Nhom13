@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Chưa kết nối được SQL Server";
+}
+<section class="page-header">
+    <div>
+        <h2>Chưa kết nối được SQL Server</h2>
+        <p>Hãy chạy file SQL trước, sau đó chạy lại website.</p>
+    </div>
+</section>
+
+<div class="card warning-card">
+    <h3>Cách sửa nhanh</h3>
+    <ol class="guide-list">
+        <li>Mở SQL Server trong Visual Studio hoặc SSMS.</li>
+        <li>Mở file <strong>Database/Tao_CSDL_QuanLyTuVanThuocDB.sql</strong>.</li>
+        <li>Bấm <strong>Execute</strong>.</li>
+        <li>Mở lại Visual Studio và chạy project bằng <strong>Ctrl + F5</strong>.</li>
+    </ol>
+    <p class="muted">Chi tiết lỗi: @ViewBag.ErrorMessage</p>
+</div>

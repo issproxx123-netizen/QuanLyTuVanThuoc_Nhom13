@@ -1,0 +1,39 @@
+@model BenhNhan
+
+<div class="form-grid">
+    <div class="form-group">
+        <label asp-for="HoTen"></label>
+        <input asp-for="HoTen" />
+        <span asp-validation-for="HoTen"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GioiTinh"></label>
+        <select asp-for="GioiTinh">
+            <option value="">-- Chọn --</option>
+            <option>Nam</option>
+            <option>Nữ</option>
+            <option>Khác</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="NgaySinh"></label>
+        <input asp-for="NgaySinh" type="date" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SoDienThoai"></label>
+        <input asp-for="SoDienThoai" />
+    </div>
+    <div class="form-group full">
+        <label asp-for="DiaChi"></label>
+        <input asp-for="DiaChi" />
+    </div>
+    <div class="form-group full">
+        <label asp-for="TienSuBenh"></label>
+        <textarea asp-for="TienSuBenh" rows="3"></textarea>
+    </div>
+    <div class="form-group full">
+        <label asp-for="DiUng"></label>
+        <textarea asp-for="DiUng" rows="3" placeholder="Ví dụ: Dị ứng penicillin, hải sản..."></textarea>
+    </div>
+</div>
+<input type="hidden" asp-for="NgayTao" />

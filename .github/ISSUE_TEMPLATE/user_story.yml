@@ -1,0 +1,30 @@
+name: User Story / Task
+about: Theo dõi một User Story hoặc Task liên kết Jira
+labels: ["user-story"]
+body:
+  - type: input
+    id: jira
+    attributes:
+      label: Jira Issue
+      placeholder: SCRUM-XX
+    validations:
+      required: true
+  - type: input
+    id: jira_url
+    attributes:
+      label: Link Jira
+      placeholder: https://trinhbaoanh2380600085.atlassian.net/browse/SCRUM-XX
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: input
+    id: branch
+    attributes:
+      label: Feature branch
+      placeholder: feature/scrum-xx-ten-ngan

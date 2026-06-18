@@ -1,0 +1,19 @@
+@model Thuoc
+@{
+    ViewData["Title"] = "Thêm thuốc";
+}
+<section class="page-header">
+    <div>
+        <h2>Thêm thuốc</h2>
+        <p>Cập nhật danh mục thuốc trong kho</p>
+    </div>
+</section>
+<div class="card">
+    <form asp-action="Create" method="post">
+        <partial name="_Form" model="Model" />
+        <div class="form-actions">
+            <button class="btn primary">Lưu thuốc</button>
+            <a asp-action="Index" class="btn ghost">Quay lại</a>
+        </div>
+    </form>
+</div>

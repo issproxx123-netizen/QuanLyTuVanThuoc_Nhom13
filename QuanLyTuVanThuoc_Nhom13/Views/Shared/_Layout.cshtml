@@ -1,0 +1,51 @@
+@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
+    bool Active(string name) => string.Equals(controller, name, StringComparison.OrdinalIgnoreCase);
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HUTECH CLINIC</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <button class="mobile-menu" type="button" aria-label="Mở menu">☰</button>
+    <aside class="sidebar">
+        <div class="brand"><div class="brand-icon">HC</div><div><h1>HUTECH CLINIC</h1><p>Quản lý tư vấn thuốc</p></div></div>
+        <nav class="menu">
+            <a class="@(Active("Home") ? "active" : "")" asp-controller="Home" asp-action="Index">🏠 Tổng quan</a>
+            <a class="@(Active("BenhNhan") ? "active" : "")" asp-controller="BenhNhan" asp-action="Index">👤 Bệnh nhân</a>
+            <a class="@(Active("Thuoc") || Active("LoaiThuoc") ? "active" : "")" asp-controller="Thuoc" asp-action="Index">💊 Kho thuốc</a>
+            @if (User.IsInRole("Admin") || User.IsInRole("Nhân viên kho"))
+            {
+                <a class="sub @(Active("LoaiThuoc") ? "active" : "")" asp-controller="LoaiThuoc" asp-action="Index">• Loại thuốc</a>
+                <a class="sub @(Active("PhieuNhapKho") ? "active" : "")" asp-controller="PhieuNhapKho" asp-action="Index">• Nhập kho</a>
+            }
+            <a class="@(Active("DonTuVan") ? "active" : "")" asp-controller="DonTuVan" asp-action="Index">📝 Phiếu tư vấn</a>
+            <a class="@(Active("CanhBao") ? "active" : "")" asp-controller="CanhBao" asp-action="Index">⚠️ Cảnh báo</a>
+            <a class="@(Active("BaoCao") ? "active" : "")" asp-controller="BaoCao" asp-action="Index">📊 Báo cáo</a>
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="@(Active("NguoiDung") ? "active" : "")" asp-controller="NguoiDung" asp-action="Index">🔐 Tài khoản</a>
+            }
+        </nav>
+        <div class="sidebar-footer">
+            <div class="avatar">@(User.Identity.Name?.Split(' ', StringSplitOptions.RemoveEmptyEntries).LastOrDefault()?.Substring(0, 1).ToUpper() ?? "U")</div>
+            <div class="user-info"><strong>@User.Identity.Name</strong><span>@User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value</span></div>
+            <form asp-controller="Auth" asp-action="Logout" method="post"><button class="logout" title="Đăng xuất">↪</button></form>
+        </div>
+    </aside>
+}
+<main class="main @(User.Identity?.IsAuthenticated == true ? "" : "guest-main")">
+    @if (TempData["Success"] != null) { <div class="toast success">✓ @TempData["Success"]</div> }
+    @if (TempData["Error"] != null) { <div class="toast error">⚠ @TempData["Error"]</div> }
+    @RenderBody()
+</main>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

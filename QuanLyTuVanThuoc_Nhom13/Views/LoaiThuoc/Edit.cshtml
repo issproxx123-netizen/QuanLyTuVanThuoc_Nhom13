@@ -1,0 +1,4 @@
+@model LoaiThuoc
+@{ ViewData["Title"] = "Cập nhật loại thuốc"; }
+<section class="page-header"><div><h2>Cập nhật loại thuốc</h2><p>Tạo danh mục phân loại mới</p></div><a asp-action="Index" class="btn ghost">← Quay lại</a></section>
+<div class="card form-card"><form asp-action="Edit" asp-route-id="@Model.MaLoaiThuoc" method="post"><input asp-for="MaLoaiThuoc" type="hidden" /><div asp-validation-summary="ModelOnly" class="validation-summary"></div><div class="form-group"><label asp-for="TenLoaiThuoc"></label><input asp-for="TenLoaiThuoc" /><span asp-validation-for="TenLoaiThuoc"></span></div><div class="form-group"><label asp-for="MoTa"></label><textarea asp-for="MoTa" rows="4"></textarea></div><div class="form-actions"><button class="btn primary">Lưu thay đổi</button><a class="btn ghost" asp-action="Index">Hủy</a></div></form></div>

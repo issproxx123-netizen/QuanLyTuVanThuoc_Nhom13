@@ -1,0 +1,28 @@
+@model DonTuVanFormViewModel
+@{ ViewData["Title"] = "Lập phiếu tư vấn"; }
+<section class="page-header"><div><p class="eyebrow">PHIẾU TƯ VẤN MỚI</p><h2>Lập phiếu tư vấn thuốc</h2><p>Hệ thống tự kiểm tra dị ứng, hạn dùng và số lượng tồn trước khi lưu</p></div><a asp-action="Index" class="btn ghost">← Quay lại</a></section>
+<form asp-action="Create" method="post">
+<div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+<div class="content-grid consultation">
+<div class="card"><h3>1. Thông tin bệnh nhân</h3>
+<div class="form-group"><label asp-for="MaBenhNhan"></label><select asp-for="MaBenhNhan" asp-items="Model.BenhNhanOptions"><option value="0">-- Chọn bệnh nhân --</option></select><span asp-validation-for="MaBenhNhan"></span></div>
+<input asp-for="MaNguoiDung" type="hidden" />
+<div class="form-group"><label asp-for="TrieuChung"></label><textarea asp-for="TrieuChung" rows="4" placeholder="Ví dụ: sốt, đau đầu, mệt mỏi..."></textarea><span asp-validation-for="TrieuChung"></span></div>
+<div class="form-group"><label asp-for="ChanDoan"></label><textarea asp-for="ChanDoan" rows="3" placeholder="Chẩn đoán của người tư vấn"></textarea><span asp-validation-for="ChanDoan"></span></div>
+<div class="form-group"><label asp-for="GhiChu"></label><textarea asp-for="GhiChu" rows="3" placeholder="Dặn dò và lưu ý sử dụng thuốc"></textarea><span asp-validation-for="GhiChu"></span></div>
+<div class="safety-note">🛡️ Phiếu chỉ được lưu khi tất cả thuốc còn hạn, đủ tồn kho và không xung đột với thông tin dị ứng.</div>
+</div>
+<div class="card"><div class="card-title"><div><h3>2. Danh sách thuốc tư vấn</h3><p class="muted">Có thể chọn tối đa 3 loại thuốc trong một phiếu</p></div></div>
+@for (var i = 0; i < Model.ChiTietInputs.Count; i++)
+{
+<div class="medicine-row">
+<div class="row-number">@(i + 1)</div>
+<div class="form-group span-2"><label>Thuốc</label><select asp-for="ChiTietInputs[i].MaThuoc" asp-items="Model.ThuocOptions"><option value="0">-- Chọn thuốc --</option></select><span asp-validation-for="ChiTietInputs[i].MaThuoc"></span></div>
+<div class="form-group"><label>Số lượng</label><input asp-for="ChiTietInputs[i].SoLuong" min="0" /><span asp-validation-for="ChiTietInputs[i].SoLuong"></span></div>
+<div class="form-group"><label>Số ngày</label><input asp-for="ChiTietInputs[i].SoNgayDung" min="1" /><span asp-validation-for="ChiTietInputs[i].SoNgayDung"></span></div>
+<div class="form-group span-2"><label>Liều dùng</label><input asp-for="ChiTietInputs[i].LieuDung" placeholder="1 viên/lần, ngày 2 lần" /><span asp-validation-for="ChiTietInputs[i].LieuDung"></span></div>
+<div class="form-group span-2"><label>Cách dùng</label><input asp-for="ChiTietInputs[i].CachDung" placeholder="Uống sau ăn" /><span asp-validation-for="ChiTietInputs[i].CachDung"></span></div>
+</div>
+}
+<div class="form-actions end"><button class="btn primary" type="submit">✓ Kiểm tra và lưu phiếu</button><a class="btn ghost" asp-action="Index">Hủy</a></div>
+</div></div></form>

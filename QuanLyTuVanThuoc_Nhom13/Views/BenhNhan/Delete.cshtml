@@ -1,0 +1,19 @@
+@model BenhNhan
+@{
+    ViewData["Title"] = "Xóa bệnh nhân";
+}
+<section class="page-header">
+    <div>
+        <h2>Xóa bệnh nhân</h2>
+        <p>Bạn có chắc muốn xóa hồ sơ này?</p>
+    </div>
+</section>
+<div class="card warning-card">
+    <h3>@Model.HoTen</h3>
+    <p>SĐT: @Model.SoDienThoai</p>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="MaBenhNhan" />
+        <button class="btn danger-btn">Xóa</button>
+        <a asp-action="Index" class="btn ghost">Hủy</a>
+    </form>
+</div>

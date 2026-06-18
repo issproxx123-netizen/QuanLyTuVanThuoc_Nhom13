@@ -1,0 +1,23 @@
+@model Thuoc
+@{
+    ViewData["Title"] = "Chi tiết thuốc";
+}
+<section class="page-header">
+    <div>
+        <h2>@Model.TenThuoc @Model.HamLuong</h2>
+        <p>Chi tiết thông tin thuốc</p>
+    </div>
+    <a asp-action="Index" class="btn ghost">Quay lại</a>
+</section>
+<div class="card">
+    <div class="detail-list">
+        <div><span>Loại thuốc</span><strong>@Model.LoaiThuoc?.TenLoaiThuoc</strong></div>
+        <div><span>Đơn vị tính</span><strong>@Model.DonViTinh</strong></div>
+        <div><span>Số lượng tồn</span><strong>@Model.SoLuongTon</strong></div>
+        <div><span>Hạn sử dụng</span><strong>@Model.HanSuDung?.ToString("dd/MM/yyyy")</strong></div>
+        <div><span>Giá bán</span><strong>@Model.GiaBan.ToString("N0") đ</strong></div>
+        <div><span>Công dụng</span><strong>@Model.CongDung</strong></div>
+        <div><span>Cách dùng</span><strong>@Model.CachDung</strong></div>
+        <div><span>Chống chỉ định</span><strong>@Model.ChongChiDinh</strong></div>
+    </div>
+</div>

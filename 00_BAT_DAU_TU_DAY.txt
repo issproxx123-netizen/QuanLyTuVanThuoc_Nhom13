@@ -1,0 +1,23 @@
+BẮT ĐẦU TỪ ĐÂY - BẢN VISUAL STUDIO + SQL ĐÃ LIÊN KẾT
+
+CÁCH AN TOÀN, KHÔNG XÓA DỮ LIỆU:
+1. Bấm 03_MO_BAI_TRONG_VISUAL_STUDIO.bat.
+2. Trong Visual Studio chọn Build -> Rebuild Solution.
+3. Nhấn Ctrl + F5.
+4. Website tự tạo database QuanLyTuVanThuocDB nếu chưa có.
+
+CÁCH TẠO LẠI DATABASE TỪ FILE SQL:
+1. Bấm 01_TAO_LAI_CSDL_VA_CHAY_WEB.bat.
+2. Nhập YES khi được hỏi.
+3. Script tạo lại database QuanLyTuVanThuocDB rồi chạy website.
+4. Lưu ý: cách này xóa dữ liệu cũ trong database.
+
+KIỂM TRA KẾT NỐI:
+- Bấm 02_KIEM_TRA_KET_NOI_CSDL.bat.
+
+THÔNG TIN LIÊN KẾT:
+- SQL Server: (localdb)\MSSQLLocalDB
+- Database: QuanLyTuVanThuocDB
+- Connection string: QuanLyTuVanThuoc_Nhom13\appsettings.json
+- Script SQL: QuanLyTuVanThuoc_Nhom13\Database\Tao_CSDL_QuanLyTuVanThuocDB.sql
+- Tài khoản: admin / 123456

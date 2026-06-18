@@ -1,0 +1,52 @@
+@model Thuoc
+
+<div class="form-grid">
+    <div class="form-group">
+        <label asp-for="TenThuoc"></label>
+        <input asp-for="TenThuoc" />
+        <span asp-validation-for="TenThuoc"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MaLoaiThuoc"></label>
+        <select asp-for="MaLoaiThuoc" asp-items="ViewBag.LoaiThuocOptions"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="DonViTinh"></label>
+        <input asp-for="DonViTinh" placeholder="Viên, hộp, chai..." />
+    </div>
+    <div class="form-group">
+        <label asp-for="HamLuong"></label>
+        <input asp-for="HamLuong" placeholder="500mg, 10mg..." />
+    </div>
+    <div class="form-group">
+        <label asp-for="SoLuongTon"></label>
+        <input asp-for="SoLuongTon" type="number" min="0" />
+    </div>
+    <div class="form-group">
+        <label asp-for="HanSuDung"></label>
+        <input asp-for="HanSuDung" type="date" />
+    </div>
+    <div class="form-group">
+        <label asp-for="GiaBan"></label>
+        <input asp-for="GiaBan" type="number" min="0" />
+    </div>
+    <div class="form-group">
+        <label asp-for="TrangThai"></label>
+        <select asp-for="TrangThai">
+            <option value="true">Đang sử dụng</option>
+            <option value="false">Ngưng sử dụng</option>
+        </select>
+    </div>
+    <div class="form-group full">
+        <label asp-for="CongDung"></label>
+        <textarea asp-for="CongDung" rows="3"></textarea>
+    </div>
+    <div class="form-group full">
+        <label asp-for="CachDung"></label>
+        <textarea asp-for="CachDung" rows="3"></textarea>
+    </div>
+    <div class="form-group full">
+        <label asp-for="ChongChiDinh"></label>
+        <textarea asp-for="ChongChiDinh" rows="3" placeholder="Ví dụ: Dị ứng penicillin..."></textarea>
+    </div>
+</div>

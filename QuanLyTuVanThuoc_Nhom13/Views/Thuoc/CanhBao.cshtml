@@ -1,0 +1,38 @@
+@model IEnumerable<Thuoc>
+@{
+    ViewData["Title"] = "Cảnh báo kho thuốc";
+}
+<section class="page-header">
+    <div>
+        <h2>Cảnh báo kho thuốc</h2>
+        <p>Thuốc tồn kho thấp hoặc sắp hết hạn sử dụng</p>
+    </div>
+    <a asp-action="Index" class="btn ghost">Quay lại kho</a>
+</section>
+
+<div class="card">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Thuốc</th>
+                <th>Loại</th>
+                <th>Tồn kho</th>
+                <th>Hạn sử dụng</th>
+                <th>Mức cảnh báo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var sapHetHan = item.HanSuDung != null && item.HanSuDung <= DateTime.Today.AddDays(90);
+                <tr>
+                    <td><strong>@item.TenThuoc @item.HamLuong</strong></td>
+                    <td>@item.LoaiThuoc?.TenLoaiThuoc</td>
+                    <td>@item.SoLuongTon @item.DonViTinh</td>
+                    <td>@item.HanSuDung?.ToString("dd/MM/yyyy")</td>
+                    <td><span class="badge @(sapHetHan ? "danger" : "warning")">@(sapHetHan ? "Sắp hết hạn" : "Tồn kho thấp")</span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
