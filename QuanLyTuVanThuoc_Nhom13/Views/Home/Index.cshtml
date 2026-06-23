@@ -10,7 +10,7 @@
 <section class="content-grid">
 <div class="card wide"><div class="card-title"><div><h3>Phiếu tư vấn gần đây</h3><p class="muted">Dữ liệu mới nhất trong hệ thống</p></div><a asp-controller="DonTuVan" asp-action="Index">Xem tất cả →</a></div>
 <div class="table-wrap"><table class="table"><thead><tr><th>Mã</th><th>Bệnh nhân</th><th>Triệu chứng</th><th>Người tư vấn</th><th>Ngày</th><th></th></tr></thead><tbody>
-@foreach (var x in Model.DonGanDay) { <tr><td><span class="code-pill">TV@x.MaDonTuVan.ToString("000")</span></td><td><strong>@x.BenhNhan?.HoTen</strong></td><td>@x.TrieuChung</td><td>@x.NguoiDung?.HoTen</td><td>@x.NgayTuVan.ToString("dd/MM HH:mm")</td><td><a class="link" asp-controller="DonTuVan" asp-action="Details" asp-route-id="@x.MaDonTuVan">Chi tiết</a></td></tr> }
+@foreach (var x in Model.DonGanDay) { <tr><td><span class="code-pill">@($"TV{x.MaDonTuVan:000}")</span></td><td><strong>@x.BenhNhan?.HoTen</strong></td><td>@x.TrieuChung</td><td>@x.NguoiDung?.HoTen</td><td>@x.NgayTuVan.ToString("dd/MM HH:mm")</td><td><a class="link" asp-controller="DonTuVan" asp-action="Details" asp-route-id="@x.MaDonTuVan">Chi tiết</a></td></tr> }
 @if (!Model.DonGanDay.Any()) { <tr><td colspan="6" class="empty-cell">Chưa có phiếu tư vấn.</td></tr> }
 </tbody></table></div></div>
 <div class="card"><div class="card-title"><h3>Cảnh báo mới</h3><a asp-controller="CanhBao" asp-action="Index">Xem →</a></div><div class="alert-list">
