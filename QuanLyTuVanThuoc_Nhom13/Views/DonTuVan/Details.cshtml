@@ -4,7 +4,7 @@
 }
 <section class="page-header no-print">
     <div>
-        <h2>Phiếu tư vấn thuốc TV@Model.MaDonTuVan.ToString("000")</h2>
+        <h2>Phiếu tư vấn thuốc @($"TV{Model.MaDonTuVan:000}")</h2>
         <p>Thông tin chi tiết phiếu tư vấn</p>
     </div>
     <div class="header-actions">
@@ -17,7 +17,7 @@
     <div class="print-header">
         <h2>HUTECH CLINIC</h2>
         <h3>PHIẾU TƯ VẤN THUỐC</h3>
-        <p>Mã phiếu: TV@Model.MaDonTuVan.ToString("000") - Ngày: @Model.NgayTuVan.ToString("dd/MM/yyyy HH:mm")</p>
+        <p>Mã phiếu: @($"TV{Model.MaDonTuVan:000}") - Ngày: @Model.NgayTuVan.ToString("dd/MM/yyyy HH:mm")</p>
     </div>
 
     <div class="content-grid">
