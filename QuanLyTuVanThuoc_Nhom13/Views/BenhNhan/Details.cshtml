@@ -14,7 +14,7 @@
     <div class="card">
         <h3>Thông tin cá nhân</h3>
         <div class="detail-list">
-            <div><span>Mã bệnh nhân</span><strong>BN@Model.MaBenhNhan.ToString("000")</strong></div>
+            <div><span>Mã bệnh nhân</span><strong>@($"BN{Model.MaBenhNhan:000}")</strong></div>
             <div><span>Họ tên</span><strong>@Model.HoTen</strong></div>
             <div><span>Giới tính</span><strong>@Model.GioiTinh</strong></div>
             <div><span>Ngày sinh</span><strong>@Model.NgaySinh?.ToString("dd/MM/yyyy")</strong></div>
